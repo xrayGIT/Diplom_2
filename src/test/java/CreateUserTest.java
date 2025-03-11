@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static helper.Environment.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static validations.Validations.checkStatus;
@@ -27,7 +28,7 @@ public class CreateUserTest {
         String email = faker.internet().emailAddress();
         String name = faker.name().firstName();
         user = new User(email, "password", name);
-        stellarburgersClient = new StellarburgersClient("https://stellarburgers.nomoreparties.site");
+        stellarburgersClient = new StellarburgersClient(BASE_URL);
         ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
         checkStatus(validatableResponse, 200);
         token = validatableResponse.extract().body().jsonPath().get("accessToken");
