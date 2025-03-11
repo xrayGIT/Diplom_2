@@ -1,6 +1,7 @@
 import client.StellarburgersClient;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.model.Status;
 import io.restassured.response.ValidatableResponse;
@@ -18,40 +19,36 @@ public class CreateUserTest {
     StellarburgersClient stellarburgersClient;
     User user;
     String token;
-    boolean isUserDeletionRequired = true;
 
     @Before
+    @Step("Пререквезиты")
     public void setUp(){
         Faker faker = new Faker();
         String email = faker.internet().emailAddress();
         String name = faker.name().firstName();
         user = new User(email, "password", name);
         stellarburgersClient = new StellarburgersClient("https://stellarburgers.nomoreparties.site");
-    }
-
-    @Test
-    @DisplayName("Создание пользователя")
-    public void createUser(){
         ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
         checkStatus(validatableResponse, 200);
         token = validatableResponse.extract().body().jsonPath().get("accessToken");
         Assert.assertNotNull("Токен сгенерирован", token);
         validatableResponse.assertThat()
                 .body("success", equalTo(true));
+    }
 
+    @Test
+    @DisplayName("Создание пользователя")
+    public void createUser(){
 
     }
 
     @Test
     @DisplayName("Создание пользователя с тем же email не возможна")
     public void createUserWithSameEmail(){
+//        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
+//        checkStatus(validatableResponse, 200);
+//        token = validatableResponse.extract().body().jsonPath().get("accessToken");
         ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
-//        Allure.step("Проверка статуса кода через assertThat", () -> {
-//            validatableResponse.assertThat().statusCode(200);
-//        });
-        checkStatus(validatableResponse, 200);
-        token = validatableResponse.extract().body().jsonPath().get("accessToken");
-        validatableResponse = stellarburgersClient.createUser(user);
         checkStatus(validatableResponse, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
@@ -62,8 +59,8 @@ public class CreateUserTest {
     @Test
     @DisplayName("Создание пользователя без email не возможно")
     public void createUserWithNoEmail(){
-        user.setEmail(null);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
+        User userWithNoEmail = new User(null, user.getPassword(), user.getName());
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoEmail);
         checkStatus(validatableResponse, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
@@ -74,8 +71,8 @@ public class CreateUserTest {
     @Test
     @DisplayName("Создание пользователя без пароля не возможно")
     public void createUserWithNoPassword(){
-        user.setPassword(null);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
+        User userWithNoPassword = new User(user.getEmail(), null, user.getName());
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoPassword);
         checkStatus(validatableResponse, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
@@ -86,8 +83,8 @@ public class CreateUserTest {
     @Test
     @DisplayName("Создание пользователя без имени не возможно")
     public void createUserWithNoName(){
-        user.setName(null);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
+        User userWithNoName = new User(user.getEmail(), user.getPassword(), null);
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoName);
         checkStatus(validatableResponse, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
@@ -96,11 +93,9 @@ public class CreateUserTest {
     }
 
     @After
+    @Step("Восстановление исходного состояния")
     public void tearDown(){
-        if(!isUserDeletionRequired){
-            Allure.step("Шаг удаления пользователя пропущен", Status.SKIPPED);
-        }
-        else if(token != null){
+        if(token != null){
             ValidatableResponse response = stellarburgersClient.deleteUser(user, token);
             checkStatus(response, 202);
         } else {
