@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import model.User;
 
 import static io.restassured.RestAssured.given;
+import static validations.Validations.checkStatus;
 
 public class StellarburgersClient {
     private String BASE_URI;
@@ -24,47 +25,55 @@ public class StellarburgersClient {
 
     // Создание пользователя POST https://stellarburgers.nomoreparties.site/api/auth/register
     @Step("Создание пользователя")
-    public ValidatableResponse createUser(User user) {
-        return given().filter(new AllureRestAssured())
+    public ValidatableResponse createUser(User user, int statusER) {
+         ValidatableResponse response = given().filter(new AllureRestAssured())
                 .spec(requestSpec)
                 .body(user)
                 .post(REGISTER_USER_API)
                 .then();
+        checkStatus(response, statusER);
+        return response;
     }
 
     // Удаление пользователя DELETE https://stellarburgers.nomoreparties.site/api/auth/user
     @Step("Удаление пользователя")
-    public ValidatableResponse deleteUser(String token) {
-        return given().filter(new AllureRestAssured())
+    public ValidatableResponse deleteUser(String token, int statusER) {
+        ValidatableResponse response = given().filter(new AllureRestAssured())
                 .spec(requestSpec)
                 .header("Authorization", token)
                 .delete(USER_API)
                 .then();
+        checkStatus(response, statusER);
+        return response;
     }
 
     // Логин пользователя POST https://stellarburgers.nomoreparties.site/api/auth/login
     @Step("Логин пользователя")
-    public ValidatableResponse loginUser(User user) {
-        return given().filter(new AllureRestAssured())
+    public ValidatableResponse loginUser(User user, int statusER) {
+        ValidatableResponse response =  given().filter(new AllureRestAssured())
                 .spec(requestSpec)
                 .body(user)
                 .post(LOGIN_USER_API)
                 .then();
+        checkStatus(response, statusER);
+        return response;
     }
 
     // Изменение пользователя PATCH https://stellarburgers.nomoreparties.site/api/auth/user
     @Step("Изменение пользователя")
-    public ValidatableResponse modifyUser(User user, String token) {
+    public ValidatableResponse modifyUser(User user, String token, int statusER) {
         RequestSpecification spec1 = given()
                 .spec(requestSpec);
         if (token != null) {
             spec1.header("Authorization", token);
         }
-        return given().filter(new AllureRestAssured())
+        ValidatableResponse response =  given().filter(new AllureRestAssured())
                 .spec(spec1)
                 .body(user)
                 .patch(USER_API)
                 .then();
+        checkStatus(response, statusER);
+        return response;
     }
 
     // Создание заказа

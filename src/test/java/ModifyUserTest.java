@@ -13,7 +13,6 @@ import org.junit.Test;
 
 import static helper.Environment.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static validations.Validations.checkStatus;
 
 public class ModifyUserTest {
     StellarburgersClient stellarburgersClient;
@@ -28,8 +27,7 @@ public class ModifyUserTest {
         String name = faker.name().firstName();
         user = new User(email, "password", name);
         stellarburgersClient = new StellarburgersClient(BASE_URL);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
-        checkStatus(validatableResponse, 200);
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user, 200);
         token = validatableResponse.extract().body().jsonPath().get("accessToken");
         Assert.assertNotNull("Токен сгенерирован", token);
         validatableResponse.assertThat()
@@ -40,8 +38,7 @@ public class ModifyUserTest {
     @DisplayName("Изменение имени пользователя")
     public void modifyUserName(){
         user.setName("newName");
-        ValidatableResponse response = stellarburgersClient.modifyUser(user, token);
-        checkStatus(response, 200);
+        ValidatableResponse response = stellarburgersClient.modifyUser(user, token, 200);
     }
 
     @Test
@@ -50,8 +47,7 @@ public class ModifyUserTest {
         user.setName("newName");
         user.setPassword("newPass");
         user.setEmail("new_mail123111@mail.test");
-        ValidatableResponse response = stellarburgersClient.modifyUser(user, token);
-        checkStatus(response, 200);
+        ValidatableResponse response = stellarburgersClient.modifyUser(user, token, 200);
     }
 
     @Test
@@ -60,16 +56,14 @@ public class ModifyUserTest {
         user.setName("newName");
         user.setPassword("newPass");
         user.setEmail("new_mail123111@mail.test");
-        ValidatableResponse response = stellarburgersClient.modifyUser(user, null);
-        checkStatus(response, 401);
+        ValidatableResponse response = stellarburgersClient.modifyUser(user, null, 401);
     }
 
     @After
     @Step("Восстановление исходного состояния")
     public void tearDown(){
         if(token != null){
-            ValidatableResponse response = stellarburgersClient.deleteUser(token);
-            checkStatus(response, 202);
+            ValidatableResponse response = stellarburgersClient.deleteUser(token, 202);
         } else {
             Allure.step("Удаление пользователя не возможно. Токен отсутствует, проверьте был ли он сгенерирован на предыдущих шагах", Status.BROKEN);
         }

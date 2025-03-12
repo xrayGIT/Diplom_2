@@ -8,7 +8,6 @@ import org.junit.runners.Parameterized;
 import static helper.Environment.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static validations.Validations.checkStatus;
 
 @RunWith(Parameterized.class)
 public class CreateUserNegativeTest {
@@ -39,8 +38,7 @@ public class CreateUserNegativeTest {
     public void createUserWithNoParam(){
         StellarburgersClient stellarburgersClient = new StellarburgersClient(BASE_URL);
         User userWithNoEmail = new User(email, password, name);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoEmail);
-        checkStatus(validatableResponse, 403);
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoEmail, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
                 .body("success", equalTo(false))

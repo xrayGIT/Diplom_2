@@ -14,7 +14,6 @@ import org.junit.Test;
 import static helper.Environment.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static validations.Validations.checkStatus;
 
 public class CreateUserTest {
     StellarburgersClient stellarburgersClient;
@@ -29,8 +28,7 @@ public class CreateUserTest {
         String name = faker.name().firstName();
         user = new User(email, "password", name);
         stellarburgersClient = new StellarburgersClient(BASE_URL);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
-        checkStatus(validatableResponse, 200);
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user, 200);
         token = validatableResponse.extract().body().jsonPath().get("accessToken");
         Assert.assertNotNull("Токен сгенерирован", token);
         validatableResponse.assertThat()
@@ -46,8 +44,7 @@ public class CreateUserTest {
     @Test
     @DisplayName("Создание пользователя с тем же email не возможна")
     public void createUserWithSameEmail(){
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
-        checkStatus(validatableResponse, 403);
+        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
                 .body("success", equalTo(false))
@@ -58,8 +55,7 @@ public class CreateUserTest {
     @Step("Восстановление исходного состояния")
     public void tearDown(){
         if(token != null){
-            ValidatableResponse response = stellarburgersClient.deleteUser(token);
-            checkStatus(response, 202);
+            ValidatableResponse response = stellarburgersClient.deleteUser(token, 202);
         } else {
             Allure.step("Удаление пользователя не возможно. Токен отсутствует, проверьте был ли он сгенерирован на предыдущих шагах", Status.BROKEN);
         }
