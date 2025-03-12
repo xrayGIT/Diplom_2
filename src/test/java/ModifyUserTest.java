@@ -54,11 +54,21 @@ public class ModifyUserTest {
         checkStatus(response, 200);
     }
 
+    @Test
+    @DisplayName("Невозможно изменить пользователя без авторизации")
+    public void modifyUser_notAuthorized(){
+        user.setName("newName");
+        user.setPassword("newPass");
+        user.setEmail("new_mail123111@mail.test");
+        ValidatableResponse response = stellarburgersClient.modifyUser(user, null);
+        checkStatus(response, 401);
+    }
+
     @After
     @Step("Восстановление исходного состояния")
     public void tearDown(){
         if(token != null){
-            ValidatableResponse response = stellarburgersClient.deleteUser(user, token);
+            ValidatableResponse response = stellarburgersClient.deleteUser(token);
             checkStatus(response, 202);
         } else {
             Allure.step("Удаление пользователя не возможно. Токен отсутствует, проверьте был ли он сгенерирован на предыдущих шагах", Status.BROKEN);

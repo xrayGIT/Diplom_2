@@ -3,37 +3,41 @@ package client;
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.ValidatableResponse;
-import lombok.AllArgsConstructor;
+import io.restassured.specification.RequestSpecification;
 import model.User;
 
 import static io.restassured.RestAssured.given;
 
-@AllArgsConstructor
 public class StellarburgersClient {
     private String BASE_URI;
     private static final String REGISTER_USER_API = "/api/auth/register";
-    private  static final String USER_API = "/api/auth/user";
-    private  static final String LOGIN_USER_API = "/api/auth/login";
+    private static final String USER_API = "/api/auth/user";
+    private static final String LOGIN_USER_API = "/api/auth/login";
+    private RequestSpecification requestSpec;
+
+    public StellarburgersClient(String BASE_URI) {
+        this.BASE_URI = BASE_URI;
+        requestSpec = given()
+                .baseUri(BASE_URI)
+                .header("Content-Type", "application/json");
+    }
 
     // Создание пользователя POST https://stellarburgers.nomoreparties.site/api/auth/register
     @Step("Создание пользователя")
     public ValidatableResponse createUser(User user) {
         return given().filter(new AllureRestAssured())
-                .baseUri(BASE_URI)
-                .header("Content-Type", "application/json")
+                .spec(requestSpec)
                 .body(user)
                 .post(REGISTER_USER_API)
                 .then();
     }
 
-    // Удаление пользователя POST DELETE https://stellarburgers.nomoreparties.site/api/auth/user
+    // Удаление пользователя DELETE https://stellarburgers.nomoreparties.site/api/auth/user
     @Step("Удаление пользователя")
-    public ValidatableResponse deleteUser(User user, String token) {
+    public ValidatableResponse deleteUser(String token) {
         return given().filter(new AllureRestAssured())
-                .baseUri(BASE_URI)
-                .header("Content-Type", "application/json")
+                .spec(requestSpec)
                 .header("Authorization", token)
-                .body(user)
                 .delete(USER_API)
                 .then();
     }
@@ -42,8 +46,7 @@ public class StellarburgersClient {
     @Step("Логин пользователя")
     public ValidatableResponse loginUser(User user) {
         return given().filter(new AllureRestAssured())
-                .baseUri(BASE_URI)
-                .header("Content-Type", "application/json")
+                .spec(requestSpec)
                 .body(user)
                 .post(LOGIN_USER_API)
                 .then();
@@ -52,10 +55,13 @@ public class StellarburgersClient {
     // Изменение пользователя PATCH https://stellarburgers.nomoreparties.site/api/auth/user
     @Step("Изменение пользователя")
     public ValidatableResponse modifyUser(User user, String token) {
+        RequestSpecification spec1 = given()
+                .spec(requestSpec);
+        if (token != null) {
+            spec1.header("Authorization", token);
+        }
         return given().filter(new AllureRestAssured())
-                .baseUri(BASE_URI)
-                .header("Content-Type", "application/json")
-                .header("Authorization", token)
+                .spec(spec1)
                 .body(user)
                 .patch(USER_API)
                 .then();
