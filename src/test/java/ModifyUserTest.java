@@ -39,6 +39,8 @@ public class ModifyUserTest {
     public void modifyUserName(){
         user.setName("newName");
         ValidatableResponse response = stellarburgersClient.modifyUser(user, token, 200);
+        response.assertThat()
+                .body("success", equalTo(true));
     }
 
     @Test
@@ -48,6 +50,8 @@ public class ModifyUserTest {
         user.setPassword("newPass");
         user.setEmail("new_mail123111@mail.test");
         ValidatableResponse response = stellarburgersClient.modifyUser(user, token, 200);
+        response.assertThat()
+                .body("success", equalTo(true));
     }
 
     @Test
@@ -57,6 +61,9 @@ public class ModifyUserTest {
         user.setPassword("newPass");
         user.setEmail("new_mail123111@mail.test");
         ValidatableResponse response = stellarburgersClient.modifyUser(user, null, 401);
+        response.assertThat()
+                .body("success", equalTo(false))
+                .body("message", equalTo("You should be authorised"));
     }
 
     @After
