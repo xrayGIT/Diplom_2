@@ -107,5 +107,19 @@ public class StellarburgersClient {
         return response;
     }
 
-    // Получить заказы
+    // Получить заказы GET https://stellarburgers.nomoreparties.site/api/orders
+    @Step("Получения списка заказов пользователя")
+    public ValidatableResponse getUserOrders(String token, int statusER) {
+        RequestSpecification spec1 = given()
+                .spec(requestSpec);
+        if (token != null) {
+            spec1.header("Authorization", token);
+        }
+        ValidatableResponse response = given().filter(new AllureRestAssured())
+                .spec(spec1)
+                .get(ORDER_API)
+                .then();
+        checkStatus(response, statusER);
+        return response;
+    }
 }
