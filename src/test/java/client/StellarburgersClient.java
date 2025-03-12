@@ -11,8 +11,8 @@ import static io.restassured.RestAssured.given;
 @AllArgsConstructor
 public class StellarburgersClient {
     private String BASE_URI;
-    private static final String USER_API = "/api/auth/register";
-    private  static final String DELETE_USER_API = "/api/auth/user";
+    private static final String REGISTER_USER_API = "/api/auth/register";
+    private  static final String USER_API = "/api/auth/user";
     private  static final String LOGIN_USER_API = "/api/auth/login";
 
     // Создание пользователя POST https://stellarburgers.nomoreparties.site/api/auth/register
@@ -22,7 +22,7 @@ public class StellarburgersClient {
                 .baseUri(BASE_URI)
                 .header("Content-Type", "application/json")
                 .body(user)
-                .post(USER_API)
+                .post(REGISTER_USER_API)
                 .then();
     }
 
@@ -34,7 +34,7 @@ public class StellarburgersClient {
                 .header("Content-Type", "application/json")
                 .header("Authorization", token)
                 .body(user)
-                .delete(DELETE_USER_API)
+                .delete(USER_API)
                 .then();
     }
 
@@ -49,7 +49,17 @@ public class StellarburgersClient {
                 .then();
     }
 
-    // Изменение пользователя
+    // Изменение пользователя PATCH https://stellarburgers.nomoreparties.site/api/auth/user
+    @Step("Изменение пользователя")
+    public ValidatableResponse modifyUser(User user, String token) {
+        return given().filter(new AllureRestAssured())
+                .baseUri(BASE_URI)
+                .header("Content-Type", "application/json")
+                .header("Authorization", token)
+                .body(user)
+                .patch(USER_API)
+                .then();
+    }
 
     // Создание заказа
 

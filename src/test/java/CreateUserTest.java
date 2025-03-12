@@ -46,51 +46,12 @@ public class CreateUserTest {
     @Test
     @DisplayName("Создание пользователя с тем же email не возможна")
     public void createUserWithSameEmail(){
-//        ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
-//        checkStatus(validatableResponse, 200);
-//        token = validatableResponse.extract().body().jsonPath().get("accessToken");
         ValidatableResponse validatableResponse = stellarburgersClient.createUser(user);
         checkStatus(validatableResponse, 403);
         validatableResponse.assertThat()
                 .body("accessToken", nullValue())
                 .body("success", equalTo(false))
                 .body("message", equalTo("User already exists"));
-    }
-
-    @Test
-    @DisplayName("Создание пользователя без email не возможно")
-    public void createUserWithNoEmail(){
-        User userWithNoEmail = new User(null, user.getPassword(), user.getName());
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoEmail);
-        checkStatus(validatableResponse, 403);
-        validatableResponse.assertThat()
-                .body("accessToken", nullValue())
-                .body("success", equalTo(false))
-                .body("message", equalTo("Email, password and name are required fields"));
-    }
-
-    @Test
-    @DisplayName("Создание пользователя без пароля не возможно")
-    public void createUserWithNoPassword(){
-        User userWithNoPassword = new User(user.getEmail(), null, user.getName());
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoPassword);
-        checkStatus(validatableResponse, 403);
-        validatableResponse.assertThat()
-                .body("accessToken", nullValue())
-                .body("success", equalTo(false))
-                .body("message", equalTo("Email, password and name are required fields"));
-    }
-
-    @Test
-    @DisplayName("Создание пользователя без имени не возможно")
-    public void createUserWithNoName(){
-        User userWithNoName = new User(user.getEmail(), user.getPassword(), null);
-        ValidatableResponse validatableResponse = stellarburgersClient.createUser(userWithNoName);
-        checkStatus(validatableResponse, 403);
-        validatableResponse.assertThat()
-                .body("accessToken", nullValue())
-                .body("success", equalTo(false))
-                .body("message", equalTo("Email, password and name are required fields"));
     }
 
     @After

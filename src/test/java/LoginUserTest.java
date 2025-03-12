@@ -10,7 +10,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import validations.Validations;
 
 import static helper.Environment.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -43,6 +42,8 @@ public class LoginUserTest {
     public void loginUser(){
         ValidatableResponse response = stellarburgersClient.loginUser(user);
         checkStatus(response, 200);
+        response.assertThat()
+                .body("success", equalTo(true));
     }
 
     @Test
