@@ -1,0 +1,310 @@
+{
+  "uid" : "c98c8e5e9f624844",
+  "name" : "Создание заказа без авторизации",
+  "fullName" : "CreateOrderTest.createOrder_noAuth",
+  "historyId" : "9e0112f5377cc576dfa019c1cca35dfa",
+  "time" : {
+    "start" : 1741794188664,
+    "stop" : 1741794190174,
+    "duration" : 1510
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Пререквезиты",
+      "time" : {
+        "start" : 1741794188665,
+        "stop" : 1741794189279,
+        "duration" : 614
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Создание пользователя",
+        "time" : {
+          "start" : 1741794188684,
+          "stop" : 1741794188936,
+          "duration" : 252
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 200",
+          "time" : {
+            "start" : 1741794188935,
+            "stop" : 1741794188936,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@749d2498"
+          }, {
+            "name" : "statueER",
+            "value" : "200"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "27149651cb377380",
+          "name" : "Request",
+          "source" : "27149651cb377380.html",
+          "type" : "text/html",
+          "size" : 827
+        }, {
+          "uid" : "cd51f444eeac4073",
+          "name" : "HTTP/1.1 200 OK",
+          "source" : "cd51f444eeac4073.html",
+          "type" : "text/html",
+          "size" : 1282
+        } ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "model.User@736ed2e9"
+        }, {
+          "name" : "statusER",
+          "value" : "200"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Получения списка доступных ингридиентов",
+        "time" : {
+          "start" : 1741794188995,
+          "stop" : 1741794189191,
+          "duration" : 196
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 200",
+          "time" : {
+            "start" : 1741794189191,
+            "stop" : 1741794189191,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@5fb135ff"
+          }, {
+            "name" : "statueER",
+            "value" : "200"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "74967a5b75217c58",
+          "name" : "Request",
+          "source" : "74967a5b75217c58.html",
+          "type" : "text/html",
+          "size" : 412
+        }, {
+          "uid" : "79387c8fcda2611a",
+          "name" : "HTTP/1.1 200 OK",
+          "source" : "79387c8fcda2611a.html",
+          "type" : "text/html",
+          "size" : 12035
+        } ],
+        "parameters" : [ {
+          "name" : "statusER",
+          "value" : "200"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 4,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Создание заказа",
+      "time" : {
+        "start" : 1741794189280,
+        "stop" : 1741794189509,
+        "duration" : 229
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Checking status code is 200",
+        "time" : {
+          "start" : 1741794189509,
+          "stop" : 1741794189509,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "response",
+          "value" : "io.restassured.internal.ValidatableResponseImpl@3c359394"
+        }, {
+          "name" : "statueER",
+          "value" : "200"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "9ffa25d5e482c98e",
+        "name" : "Request",
+        "source" : "9ffa25d5e482c98e.html",
+        "type" : "text/html",
+        "size" : 765
+      }, {
+        "uid" : "280cc546ee4230ed",
+        "name" : "HTTP/1.1 200 OK",
+        "source" : "280cc546ee4230ed.html",
+        "type" : "text/html",
+        "size" : 745
+      } ],
+      "parameters" : [ {
+        "name" : "order",
+        "value" : "model.Order@230714e6"
+      }, {
+        "name" : "statusER",
+        "value" : "200"
+      }, {
+        "name" : "token",
+        "value" : "null"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Восстановление исходного состояния",
+      "time" : {
+        "start" : 1741794189609,
+        "stop" : 1741794190172,
+        "duration" : 563
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Удаление пользователя",
+        "time" : {
+          "start" : 1741794189609,
+          "stop" : 1741794190172,
+          "duration" : 563
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 202",
+          "time" : {
+            "start" : 1741794190172,
+            "stop" : 1741794190172,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@5a311acd"
+          }, {
+            "name" : "statueER",
+            "value" : "202"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "ab4521e35d704b0d",
+          "name" : "Request",
+          "source" : "ab4521e35d704b0d.html",
+          "type" : "text/html",
+          "size" : 838
+        }, {
+          "uid" : "87f2f649d8121c71",
+          "name" : "HTTP/1.1 202 Accepted",
+          "source" : "87f2f649d8121c71.html",
+          "type" : "text/html",
+          "size" : 643
+        } ],
+        "parameters" : [ {
+          "name" : "token",
+          "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDFhYjhkOWVkMjgwMDAxYjU5NjNjOSIsImlhdCI6MTc0MTc5NDE4OSwiZXhwIjoxNzQxNzk1Mzg5fQ.IUOqA9D-IGHTh2msAYmX1ENLpBLGZyxBN-9KUCTc69o"
+        }, {
+          "name" : "statusER",
+          "value" : "202"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "CreateOrderTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createOrder_noAuth"
+  }, {
+    "name" : "suite",
+    "value" : "CreateOrderTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Paul.local"
+  }, {
+    "name" : "thread",
+    "value" : "93543@MacBook-Air-Paul.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c98c8e5e9f624844.json",
+  "parameterValues" : [ ]
+}

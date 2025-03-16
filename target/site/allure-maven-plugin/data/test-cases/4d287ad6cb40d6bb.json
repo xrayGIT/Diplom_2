@@ -1,0 +1,208 @@
+{
+  "uid" : "4d287ad6cb40d6bb",
+  "name" : "createUserWithNoParam[Создание пользователя без пароля не возможно]",
+  "fullName" : "CreateUserNegativeTest.createUserWithNoParam[Создание пользователя без пароля не возможно]",
+  "historyId" : "4962f353027ea09c7dea11570cf8d589",
+  "time" : {
+    "start" : 1741796469933,
+    "stop" : 1741796470128,
+    "duration" : 195
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Создание пользователя",
+      "time" : {
+        "start" : 1741796469934,
+        "stop" : 1741796470081,
+        "duration" : 147
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Checking status code is 403",
+        "time" : {
+          "start" : 1741796470081,
+          "stop" : 1741796470081,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "response",
+          "value" : "io.restassured.internal.ValidatableResponseImpl@107852f1"
+        }, {
+          "name" : "statueER",
+          "value" : "403"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "7d9c43f2cbd5c3da",
+        "name" : "Request",
+        "source" : "7d9c43f2cbd5c3da.html",
+        "type" : "text/html",
+        "size" : 723
+      }, {
+        "uid" : "46887af79713c541",
+        "name" : "HTTP/1.1 403 Forbidden",
+        "source" : "46887af79713c541.html",
+        "type" : "text/html",
+        "size" : 663
+      } ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "model.User@6c200ad5"
+      }, {
+        "name" : "statusER",
+        "value" : "403"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "CreateUserNegativeTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createUserWithNoParam[Создание пользователя без пароля не возможно]"
+  }, {
+    "name" : "suite",
+    "value" : "CreateUserNegativeTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Paul.local"
+  }, {
+    "name" : "thread",
+    "value" : "94391@MacBook-Air-Paul.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "ab27b72f4705a4f9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741796242252,
+        "stop" : 1741796242599,
+        "duration" : 347
+      }
+    }, {
+      "uid" : "b32916c935bbd143",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741796134254,
+        "stop" : 1741796134478,
+        "duration" : 224
+      }
+    }, {
+      "uid" : "53cf1a05c17bd0cc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741795968383,
+        "stop" : 1741795968566,
+        "duration" : 183
+      }
+    }, {
+      "uid" : "2d72a8fe5cfe4bbe",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794749587,
+        "stop" : 1741794749777,
+        "duration" : 190
+      }
+    }, {
+      "uid" : "381570bf104a5d66",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794692082,
+        "stop" : 1741794692323,
+        "duration" : 241
+      }
+    }, {
+      "uid" : "7522aa01211300aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794584553,
+        "stop" : 1741794584752,
+        "duration" : 199
+      }
+    }, {
+      "uid" : "e54dd102eb49221a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794195169,
+        "stop" : 1741794195363,
+        "duration" : 194
+      }
+    }, {
+      "uid" : "b6e5bb2415cc7445",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741793453730,
+        "stop" : 1741793453951,
+        "duration" : 221
+      }
+    }, {
+      "uid" : "f69128d56d0aa92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741792024961,
+        "stop" : 1741792025205,
+        "duration" : 244
+      }
+    }, {
+      "uid" : "7c6ed2f0049df9a1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741791920891,
+        "stop" : 1741791921124,
+        "duration" : 233
+      }
+    }, {
+      "uid" : "2cef4fc79339f4e1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741789591075,
+        "stop" : 1741789591330,
+        "duration" : 255
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4d287ad6cb40d6bb.json",
+  "parameterValues" : [ ]
+}

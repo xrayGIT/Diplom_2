@@ -11,16 +11,14 @@ import static io.restassured.RestAssured.given;
 import static validations.Validations.checkStatus;
 
 public class StellarburgersClient {
-    private String BASE_URI;
     private static final String REGISTER_USER_API = "/api/auth/register";
     private static final String USER_API = "/api/auth/user";
     private static final String LOGIN_USER_API = "/api/auth/login";
     private static final String ORDER_API = "/api/orders";
     private static final String INGREDIENTS_API = "/api/ingredients";
-    private RequestSpecification requestSpec;
+    private final RequestSpecification requestSpec;
 
     public StellarburgersClient(String BASE_URI) {
-        this.BASE_URI = BASE_URI;
         requestSpec = given()
                 .baseUri(BASE_URI)
                 .header("Content-Type", "application/json");

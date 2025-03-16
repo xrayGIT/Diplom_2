@@ -1,0 +1,346 @@
+{
+  "uid" : "84aaa8645f2743bb",
+  "name" : "Логин пользователя с неверным паролем не возможен",
+  "fullName" : "LoginUserTest.loginUserWithInvalidPassword",
+  "historyId" : "30eb11dc3be659fa1a68e38bf2ec0890",
+  "time" : {
+    "start" : 1741796442162,
+    "stop" : 1741796443345,
+    "duration" : 1183
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Пререквезиты",
+      "time" : {
+        "start" : 1741796442163,
+        "stop" : 1741796442500,
+        "duration" : 337
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Создание пользователя",
+        "time" : {
+          "start" : 1741796442204,
+          "stop" : 1741796442460,
+          "duration" : 256
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 200",
+          "time" : {
+            "start" : 1741796442460,
+            "stop" : 1741796442460,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@79b2fe41"
+          }, {
+            "name" : "statueER",
+            "value" : "200"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "acff0046a9bd45fb",
+          "name" : "Request",
+          "source" : "acff0046a9bd45fb.html",
+          "type" : "text/html",
+          "size" : 819
+        }, {
+          "uid" : "10ec6b1a376eb8db",
+          "name" : "HTTP/1.1 200 OK",
+          "source" : "10ec6b1a376eb8db.html",
+          "type" : "text/html",
+          "size" : 1278
+        } ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "model.User@101d2cea"
+        }, {
+          "name" : "statusER",
+          "value" : "200"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Логин пользователя",
+      "time" : {
+        "start" : 1741796442500,
+        "stop" : 1741796442723,
+        "duration" : 223
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Checking status code is 401",
+        "time" : {
+          "start" : 1741796442723,
+          "stop" : 1741796442723,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "response",
+          "value" : "io.restassured.internal.ValidatableResponseImpl@22e0a633"
+        }, {
+          "name" : "statueER",
+          "value" : "401"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "6de684f4c6e0109e",
+        "name" : "Request",
+        "source" : "6de684f4c6e0109e.html",
+        "type" : "text/html",
+        "size" : 741
+      }, {
+        "uid" : "fd1b00a641c11d18",
+        "name" : "HTTP/1.1 401 Unauthorized",
+        "source" : "fd1b00a641c11d18.html",
+        "type" : "text/html",
+        "size" : 650
+      } ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "model.User@67a6582d"
+      }, {
+        "name" : "statusER",
+        "value" : "401"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Восстановление исходного состояния",
+      "time" : {
+        "start" : 1741796442781,
+        "stop" : 1741796443344,
+        "duration" : 563
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Удаление пользователя",
+        "time" : {
+          "start" : 1741796442781,
+          "stop" : 1741796443344,
+          "duration" : 563
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 202",
+          "time" : {
+            "start" : 1741796443344,
+            "stop" : 1741796443344,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@1f70c1b8"
+          }, {
+            "name" : "statueER",
+            "value" : "202"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "22ae0e132cb080a1",
+          "name" : "Request",
+          "source" : "22ae0e132cb080a1.html",
+          "type" : "text/html",
+          "size" : 838
+        }, {
+          "uid" : "bdd89e6e12e784b9",
+          "name" : "HTTP/1.1 202 Accepted",
+          "source" : "bdd89e6e12e784b9.html",
+          "type" : "text/html",
+          "size" : 643
+        } ],
+        "parameters" : [ {
+          "name" : "token",
+          "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDFiNDVhOWVkMjgwMDAxYjU5NjY0MSIsImlhdCI6MTc0MTc5NjQ0MiwiZXhwIjoxNzQxNzk3NjQyfQ.-u7OT-Z2IRbInNkpSfTVakgwC3RewSxZG-49Aw1DqYk"
+        }, {
+          "name" : "statusER",
+          "value" : "202"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "LoginUserTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginUserWithInvalidPassword"
+  }, {
+    "name" : "suite",
+    "value" : "LoginUserTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Paul.local"
+  }, {
+    "name" : "thread",
+    "value" : "94391@MacBook-Air-Paul.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7e39a15cc2293410",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741796214091,
+        "stop" : 1741796215528,
+        "duration" : 1437
+      }
+    }, {
+      "uid" : "f63fff1260674888",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741796104824,
+        "stop" : 1741796106771,
+        "duration" : 1947
+      }
+    }, {
+      "uid" : "255e1477103be8f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741795948345,
+        "stop" : 1741795949576,
+        "duration" : 1231
+      }
+    }, {
+      "uid" : "6139fa6886214453",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794738064,
+        "stop" : 1741794739359,
+        "duration" : 1295
+      }
+    }, {
+      "uid" : "3ff02997f50170b9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794680491,
+        "stop" : 1741794681726,
+        "duration" : 1235
+      }
+    }, {
+      "uid" : "57753987434d8094",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794572964,
+        "stop" : 1741794574325,
+        "duration" : 1361
+      }
+    }, {
+      "uid" : "e1958e4781c01d6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741794187183,
+        "stop" : 1741794188653,
+        "duration" : 1470
+      }
+    }, {
+      "uid" : "860e48520ce5146d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741793449492,
+        "stop" : 1741793450780,
+        "duration" : 1288
+      }
+    }, {
+      "uid" : "8d20dac8805bbca4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741792020287,
+        "stop" : 1741792021710,
+        "duration" : 1423
+      }
+    }, {
+      "uid" : "c71401ab963e8e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741791916274,
+        "stop" : 1741791917772,
+        "duration" : 1498
+      }
+    }, {
+      "uid" : "742ea5c67868f7aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1741789587066,
+        "stop" : 1741789588490,
+        "duration" : 1424
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "84aaa8645f2743bb.json",
+  "parameterValues" : [ ]
+}

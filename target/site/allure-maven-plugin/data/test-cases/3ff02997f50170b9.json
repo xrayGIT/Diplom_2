@@ -1,0 +1,256 @@
+{
+  "uid" : "3ff02997f50170b9",
+  "name" : "Логин пользователя с неверным паролем не возможен",
+  "fullName" : "LoginUserTest.loginUserWithInvalidPassword",
+  "historyId" : "30eb11dc3be659fa1a68e38bf2ec0890",
+  "time" : {
+    "start" : 1741794680491,
+    "stop" : 1741794681726,
+    "duration" : 1235
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Пререквезиты",
+      "time" : {
+        "start" : 1741794680493,
+        "stop" : 1741794680825,
+        "duration" : 332
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Создание пользователя",
+        "time" : {
+          "start" : 1741794680532,
+          "stop" : 1741794680780,
+          "duration" : 248
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 200",
+          "time" : {
+            "start" : 1741794680780,
+            "stop" : 1741794680780,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@38807c9d"
+          }, {
+            "name" : "statueER",
+            "value" : "200"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "3e5e3654cfb4ce10",
+          "name" : "Request",
+          "source" : "3e5e3654cfb4ce10.html",
+          "type" : "text/html",
+          "size" : 823
+        }, {
+          "uid" : "67d10066f4c0f053",
+          "name" : "HTTP/1.1 200 OK",
+          "source" : "67d10066f4c0f053.html",
+          "type" : "text/html",
+          "size" : 1280
+        } ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "model.User@2f9ceea8"
+        }, {
+          "name" : "statusER",
+          "value" : "200"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Логин пользователя",
+      "time" : {
+        "start" : 1741794680825,
+        "stop" : 1741794681053,
+        "duration" : 228
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Checking status code is 401",
+        "time" : {
+          "start" : 1741794681053,
+          "stop" : 1741794681053,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "response",
+          "value" : "io.restassured.internal.ValidatableResponseImpl@74bd894b"
+        }, {
+          "name" : "statueER",
+          "value" : "401"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "90908809574a2a43",
+        "name" : "Request",
+        "source" : "90908809574a2a43.html",
+        "type" : "text/html",
+        "size" : 743
+      }, {
+        "uid" : "dc2d17e9499eff33",
+        "name" : "HTTP/1.1 401 Unauthorized",
+        "source" : "dc2d17e9499eff33.html",
+        "type" : "text/html",
+        "size" : 650
+      } ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "model.User@7e0bcdeb"
+      }, {
+        "name" : "statusER",
+        "value" : "401"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Восстановление исходного состояния",
+      "time" : {
+        "start" : 1741794681116,
+        "stop" : 1741794681726,
+        "duration" : 610
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Удаление пользователя",
+        "time" : {
+          "start" : 1741794681116,
+          "stop" : 1741794681726,
+          "duration" : 610
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Checking status code is 202",
+          "time" : {
+            "start" : 1741794681726,
+            "stop" : 1741794681726,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "response",
+            "value" : "io.restassured.internal.ValidatableResponseImpl@299b1c82"
+          }, {
+            "name" : "statueER",
+            "value" : "202"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "d455545a1e1b1b90",
+          "name" : "Request",
+          "source" : "d455545a1e1b1b90.html",
+          "type" : "text/html",
+          "size" : 838
+        }, {
+          "uid" : "fb1997e479ca5912",
+          "name" : "HTTP/1.1 202 Accepted",
+          "source" : "fb1997e479ca5912.html",
+          "type" : "text/html",
+          "size" : 643
+        } ],
+        "parameters" : [ {
+          "name" : "token",
+          "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDFhZDc4OWVkMjgwMDAxYjU5NjQ3ZCIsImlhdCI6MTc0MTc5NDY4MCwiZXhwIjoxNzQxNzk1ODgwfQ.0pVyNiikp0hjfQuBZxf2MM_1xSXXRibxYctu3jMfPF8"
+        }, {
+          "name" : "statusER",
+          "value" : "202"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "LoginUserTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginUserWithInvalidPassword"
+  }, {
+    "name" : "suite",
+    "value" : "LoginUserTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Paul.local"
+  }, {
+    "name" : "thread",
+    "value" : "93726@MacBook-Air-Paul.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3ff02997f50170b9.json",
+  "parameterValues" : [ ]
+}
