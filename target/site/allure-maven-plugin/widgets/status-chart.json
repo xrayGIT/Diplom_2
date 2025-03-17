@@ -1,0 +1,171 @@
+[ {
+  "uid" : "588f03fd6f9e2f5c",
+  "name" : "createUserWithNoParam[Создание пользователя без имени не возможно]",
+  "time" : {
+    "start" : 1742237603769,
+    "stop" : 1742237604052,
+    "duration" : 283
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8c5b3e0bb8b898e3",
+  "name" : "Создание заказа без ингредиентов не возможно",
+  "time" : {
+    "start" : 1742237578034,
+    "stop" : 1742237579296,
+    "duration" : 1262
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3cf74031af6a25b2",
+  "name" : "createUserWithNoParam[Создание пользователя без email не возможно]",
+  "time" : {
+    "start" : 1742237603195,
+    "stop" : 1742237603404,
+    "duration" : 209
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4db0c351c23749b3",
+  "name" : "Получение заказов пользователя без авторизации не возможна",
+  "time" : {
+    "start" : 1742237586544,
+    "stop" : 1742237594653,
+    "duration" : 8109
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3fc435b8bdf7c9dc",
+  "name" : "Логин пользователя с неверным паролем не возможен",
+  "time" : {
+    "start" : 1742237575227,
+    "stop" : 1742237576596,
+    "duration" : 1369
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "55d6a6c6f75713bd",
+  "name" : "Невозможно изменить пользователя без авторизации",
+  "time" : {
+    "start" : 1742237571313,
+    "stop" : 1742237572528,
+    "duration" : 1215
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fe228c7ce0f41ba0",
+  "name" : "Создание пользователя",
+  "time" : {
+    "start" : 1742237585602,
+    "stop" : 1742237586536,
+    "duration" : 934
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4c0f701e1b867419",
+  "name" : "Создание пользователя с тем же email не возможна",
+  "time" : {
+    "start" : 1742237584390,
+    "stop" : 1742237585595,
+    "duration" : 1205
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fc9735c9f0bdf3e9",
+  "name" : "Создание заказа без авторизации",
+  "time" : {
+    "start" : 1742237576606,
+    "stop" : 1742237578029,
+    "duration" : 1423
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f54b6fff04b5157b",
+  "name" : "Изменение всех полей пользователя",
+  "time" : {
+    "start" : 1742237561029,
+    "stop" : 1742237569856,
+    "duration" : 8827
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ade0530cb463bb",
+  "name" : "Получение заказов пользователя",
+  "time" : {
+    "start" : 1742237594658,
+    "stop" : 1742237603143,
+    "duration" : 8485
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "232118bef0af6dc9",
+  "name" : "Создание заказа с не валидными ингредиентами не возможно",
+  "time" : {
+    "start" : 1742237582798,
+    "stop" : 1742237584377,
+    "duration" : 1579
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "55817ade5d941b3",
+  "name" : "Логин пользователя с неверным email не возможен",
+  "time" : {
+    "start" : 1742237573901,
+    "stop" : 1742237575214,
+    "duration" : 1313
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fec1808c15280a3f",
+  "name" : "Логин пользователя",
+  "time" : {
+    "start" : 1742237572539,
+    "stop" : 1742237573895,
+    "duration" : 1356
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d679c791808a39b1",
+  "name" : "Создание заказа с авторизацией",
+  "time" : {
+    "start" : 1742237579302,
+    "stop" : 1742237582794,
+    "duration" : 3492
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "447a877ec8e82c3f",
+  "name" : "createUserWithNoParam[Создание пользователя без пароля не возможно]",
+  "time" : {
+    "start" : 1742237603408,
+    "stop" : 1742237603761,
+    "duration" : 353
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cc9c6bbf8e05a7a3",
+  "name" : "Изменение имени пользователя",
+  "time" : {
+    "start" : 1742237569978,
+    "stop" : 1742237571294,
+    "duration" : 1316
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
