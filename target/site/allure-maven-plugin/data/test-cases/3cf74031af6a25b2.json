@@ -1,0 +1,120 @@
+{
+  "uid" : "3cf74031af6a25b2",
+  "name" : "createUserWithNoParam[Создание пользователя без email не возможно]",
+  "fullName" : "CreateUserNegativeTest.createUserWithNoParam[Создание пользователя без email не возможно]",
+  "historyId" : "1f49b2c46ea95de6af4706e9c731dc66",
+  "time" : {
+    "start" : 1742237603195,
+    "stop" : 1742237603404,
+    "duration" : 209
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Создание пользователя",
+      "time" : {
+        "start" : 1742237603196,
+        "stop" : 1742237603344,
+        "duration" : 148
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Checking status code is 403",
+        "time" : {
+          "start" : 1742237603344,
+          "stop" : 1742237603344,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "response",
+          "value" : "io.restassured.internal.ValidatableResponseImpl@96d74ca"
+        }, {
+          "name" : "statueER",
+          "value" : "403"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "3333f5996b46a198",
+        "name" : "Request",
+        "source" : "3333f5996b46a198.html",
+        "type" : "text/html",
+        "size" : 689
+      }, {
+        "uid" : "b9b717bf9eb1ea5b",
+        "name" : "HTTP/1.1 403 Forbidden",
+        "source" : "b9b717bf9eb1ea5b.html",
+        "type" : "text/html",
+        "size" : 663
+      } ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "model.User@6fe1643"
+      }, {
+        "name" : "statusER",
+        "value" : "403"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "CreateUserNegativeTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createUserWithNoParam[Создание пользователя без email не возможно]"
+  }, {
+    "name" : "suite",
+    "value" : "CreateUserNegativeTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Paul.local"
+  }, {
+    "name" : "thread",
+    "value" : "32379@MacBook-Air-Paul.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3cf74031af6a25b2.json",
+  "parameterValues" : [ ]
+}
